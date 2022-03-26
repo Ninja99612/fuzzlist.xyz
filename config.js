@@ -1,20 +1,20 @@
 
 module.exports = {
   bot: {
-    token: process.env.Tokenmain,//your bot token for botlist
-    prefix: process.env.prefix,//your bot prefix for botlist
+    token: "OTU0ODUyMDUzOTM3NzAwOTM0.YjZJRQ.P-jlKOZs3P9l0_CWBHPIL-hY6ZM",//your bot token for botlist
+    prefix: "!",//your bot prefix for botlist
     owners: ["938171799139655700","831181411448651796"],//owners id
-    mongourl: process.env.mongo,//mongodb url
+    mongourl: "mongodb+srv://user:YaAjyu26KaPt9pi1@cluster0.hmwwh.mongodb.net/Public2?retryWrites=true&w=majority",//mongodb url
     servers: {
-      token: process.env.servers,//your bot token for serverlist
-      prefix: process.env.serverprefix,
+      token: "OTU0ODUyMDUzOTM3NzAwOTM0.YjZJRQ.P-jlKOZs3P9l0_CWBHPIL-hY6ZM",//your bot token for serverlist
+      prefix: "!",
     }
   },
 
   website: {
-    callback: process.env.callback,//callback url https://domain.com/callback
-    secret: process.env.secret,//your botlist bot's client secret
-    clientID: process.env.clientID, // botlist Bot client id.
+    callback: "https://fuzzlist.xyz/callback",//callback url https://domain.com/callback
+    secret: "vktXrFerEv-aIbjkiXFdji-z5AQSrZgr",//your botlist bot's client secret
+    clientID: "954852053937700934", // botlist Bot client id.
     tags: ["Moderation", "Fun", "Minecraft", "Economy", "Guard", "NSFW", "Anime", "Invite", "Music", "Logging", "Web Dashboard", "Reddit", "Youtube", "Twitch", "Crypto", "Leveling", "Game", "Roleplay", "Utility", "India"],
     languages: [
       { flag: 'us', code: 'af', name: 'Afrikaans' },
@@ -132,8 +132,8 @@ module.exports = {
   },
 
   server: {
-    id: process.env.serverid,//your server id
-    invite: process.env.invite,//your server invite link
+    id: "951591549794390036",//your server id
+    invite: "https://discord.gg/bvJ9NSj5Kb",//your server invite link
     roles: {
       administrator: "954130499314528327",// website admin role id
       moderator: "954130592339984424", // bot reveiwer role id
