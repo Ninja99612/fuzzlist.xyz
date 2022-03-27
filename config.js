@@ -1,12 +1,12 @@
 
 module.exports = {
   bot: {
-    token: "OTU0ODUyMDUzOTM3NzAwOTM0.YjZJRQ.P-jlKOZs3P9l0_CWBHPIL-hY6ZM",//your bot token for botlist
+    token: "",//your bot token for botlist
     prefix: "!",//your bot prefix for botlist
     owners: ["938171799139655700","831181411448651796"],//owners id
     mongourl: "mongodb+srv://user:YaAjyu26KaPt9pi1@cluster0.hmwwh.mongodb.net/Public2?retryWrites=true&w=majority",//mongodb url
     servers: {
-      token: "OTU0ODUyMDUzOTM3NzAwOTM0.YjZJRQ.P-jlKOZs3P9l0_CWBHPIL-hY6ZM",//your bot token for serverlist
+      token: "",//your bot token for serverlist
       prefix: "!",
     }
   },
