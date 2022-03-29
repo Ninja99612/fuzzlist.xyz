@@ -18,24 +18,14 @@ client.komutlar = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./src/commands', (err, files) => {
 	if (err) console.error(err);
-	console.log(`[vcodes.xyz]: ${files.length} command loaded.`);
-	files.forEach(f => {
-		if (!f.endsWith('.js')) return;
-		let props = require(`./src/commands/${f}`);
-		if (!props.help) return;
-		client.komutlar.set(props.help.name, props);
-		props.conf.aliases.forEach(alias => {
-			client.aliases.set(alias, props.help.name);
-			global.commands = files;
+	console.log(`[vcodes.xyz]:  command loaded.`);
 		});
-	});
-});
 client.on('message', async message => {
 	let p = config.bot.prefix;
 	let client = message.client;
 	if (message.author.bot) return;
 	if (!message.content.startsWith(p)) return;
-	let command = message.content.split(' ')[0].slice(p.length);
+
 	let params = message.content.split(' ').slice(1);
 	let cmd;
 	if (client.komutlar.has(command)) {
