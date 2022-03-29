@@ -5,7 +5,7 @@ const serverData = require("../../database/models/servers/server.js");
 exports.run = async (client, message, args) => {
 	let findServer = await serverData.findOne({ id: message.guild.id });
 	if(!findServer) return message.channel.send(
-		"This server was not found in our list.\nAdd your server: https://bhbotlist.xyz/server/add"
+		"This server was not found in our list.\nAdd your server: https://fuzzlist.xyz/server/add"
 	);
 	let cooldown = 1800000;
   	let lastDaily = findServer.bump;
@@ -42,7 +42,7 @@ exports.run = async (client, message, args) => {
     let web = new MessageButton()
     .setLabel("Visit server page")
     .setStyle("url")
-    .setURL("https://bhbotlist.xyz/server/"+message.guild.id)
+    .setURL("https://fuzzist.xyz/server/"+message.guild.id)
 
     const incorrectButton = new Discord.MessageEmbed()
 	.setTitle("Wrong button selected.")
@@ -107,7 +107,7 @@ exports.help = {
 function msgError(msg, { channel }) {
     channel.send(new Discord.MessageEmbed()
     .setAuthor(global.clientSL.user.username,global.clientSL.user.avatarURL())
-    .setFooter('bhbotlist.xyz/servers')
+    .setFooter('fuzzlist.xyz/servers')
     .setDescription(msg)
     .setColor("RED")
     )
