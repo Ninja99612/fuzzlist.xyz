@@ -1,12 +1,13 @@
 
-        module.exports = {
+module.exports = {
             bot: {
                 token: "",
                 prefix: "",
                 owners: [""],
                 mongourl: "",
                 servers: {
-                    token: "",
+                    token: "OTU0ODUyMDUzOTM3NzAwOTM0.YjZJRQ.PUnxmPShbYIkO7dppHcOj63lGw4
+",
                     prefix: ""
                 }
             },

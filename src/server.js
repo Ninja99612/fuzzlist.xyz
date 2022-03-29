@@ -1,5 +1,5 @@
 
-  const url = require("url");
+const url = require("url");
   const path = require("path");
   const express = require("express");
   const passport = require("passport");
@@ -323,12 +323,7 @@ app.get("/news", (req, res) => {
         }
         return next();
     })
-    const http = require('http').createServer(app);
-    const io = require('socket.io')(http);
-    io.on('connection', socket => {
-        io.emit("userCount", io.engine.clientsCount);
-    });
-    http.listen(3000, () => { console.log("[bhbotlist.xyz]: Website running port 3000.")});
+
 
     //------------------- Routers -------------------//
 
@@ -382,10 +377,14 @@ app.get("/news", (req, res) => {
    /* Botlist new premium bot files  */
     app.use("/",require('./routers/bot/scoopy.js'))
    
-    
+ 
 
-
-
+    const http = require('http').createServer(app);
+    const io = require('socket.io')(http);
+    io.on('connection', socket => {
+        io.emit("userCount", io.engine.clientsCount);
+    });
+    http.listen(3000, () => { console.log("[bhbotlist.xyz]: Website running port 3000.")});
    
     /* Uptime System */
     console.log(" ")
