@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const { Client, Collection } = require('discord.js');
 const client = (global.Client = new Client());
-const config = require('./config.js');
+const config = require('../../config.js');
 global.config = config;
 const fs = require('fs');
 client.htmll = require('cheerio');
