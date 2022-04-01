@@ -359,8 +359,8 @@ client.on('ready', async () => {
 /*=======================================================================================*/
 
 /*=======================================================================================*/
-const votes = require('./src/database/models/botlist/vote.js');
-const votesServer = require('./src/database/models/servers/user.js');
+const votes = require('../src/database/models/botlist/vote.js');
+const votesServer = require('../src/database/models/servers/user.js');
 client.on('ready', async () => {
 	setInterval(async () => {
 		let datalar = await votes.find();
@@ -393,7 +393,7 @@ client.on('ready', async () => {
 
 /*=======================================================================================*/
 client.on('guildMemberRemove', async member => {
-	const botlar = require('./src/database/models/botlist/bots.js');
+	const botlar = require('../src/database/models/botlist/bots.js');
 	let data = await botlar.findOne({ ownerID: member.id });
 	if (!data) return;
 	let find = await botlar.find({ ownerID: member.id });
@@ -418,18 +418,18 @@ client.on('guildMemberAdd', async member => {
 const serverClient = new Client();
 serverClient.login(config.bot.servers.token);
 global.clientSL = serverClient;
-require('./src/servers/client.js');
+require('../src/servers/client.js');
 
 /*=======================================================================================*/
-require('./src/server.js')(client);
-require('./src/database/connect.js')(client);
+require('../src/server.js')(client);
+require('../src/database/connect.js')(client);
 
 client.login(config.bot.token);
 client.on('ready', async () => {
 	console.log(
 		'[vcodes.xyz]: Bot successfully connected as ' + client.user.tag + '.'
 	);
-	let botsSchema = require('./src/database/models/botlist/bots.js');
+	let botsSchema = require('../src/database/models/botlist/bots.js');
 	const bots = await botsSchema.find();
 	client.user.setPresence({
 		activity: {
@@ -445,8 +445,8 @@ client.on('ready', async () => {
 
 // BOT/SERVER VOTES & ANALYTICS
 const { CronJob } = require('cron');
-const botlar = require('./src/database/models/botlist/bots.js');
-const servers = require('./src/database/models/servers/server.js');
+const botlar = require('../src/database/models/botlist/bots.js');
+const servers = require('../src/database/models/servers/server.js');
 client.on('ready', async () => {
 	var resetStats = new CronJob(
 		'00 00 1 * *',
